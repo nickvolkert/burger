@@ -1,20 +1,30 @@
-<h1>Burgers</h1>
+<h1>Eat Da Burger</h1>
 
-<h3>Burgers Burgers Burgers</h3>
+<h3>Enter a burger below! Eat it? Click Devoured!</h3>
 
-<ul>
-  {{#each burgers}}
-  	<li>
-  	   <p>ID: {{this.id}}</p>
-       <p>Wish: {{this.wish}}</p>
-  	</li>
-  {{/each}}
-</ul>
-
+<div id="burgerContainer">
+  <div id="unEaten">
+    <ul>
+      {{#each burgers}}
+      	<li>
+      	   <p>{{this.name}}</p>
+      	</li>
+      {{/each}}
+    </ul>
+  </div>
+  <div id="eaten">
+    <ul>
+      {{#each burgers}}
+      	<li>
+      	   <p>{{this.name}}</p>
+      	</li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
 <div>
   <form action="/" method="POST">
-  	<textarea type="text" name="burgerBTN"></textarea>
-
-  	<button type="submit">Submit</button>
+  	<textarea type="text" name="burgerForm"></textarea>
+    <button type="submit" id="burgerBTN">Add a Burger</button>
   </form>
 </div>
