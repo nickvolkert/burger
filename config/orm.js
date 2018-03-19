@@ -1,10 +1,6 @@
-// *********************************************************************************
-// orm.js - This file offers a set of easier-to-use methods for interacting with the MySQL db.
-// *********************************************************************************
-
-// Dependencies
+// Import mysql connections
 // =============================================================
-var connection = require("./connection.js");
+var connection = require("../models/burger.js");
 
 // ORM
 // =============================================================
@@ -15,7 +11,7 @@ var orm = {
 
   // Here our ORM is creating a simple method for performing a query of the entire table.
   // We make use of the callback to ensure that data is returned only once the query is done.
-  selectAll: function(callback) {
+  selectAll: function(cb) {
     var s = "SELECT * FROM " + tableName;
 
     connection.query(s, function(err, result) {
