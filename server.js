@@ -15,7 +15,8 @@ app.use(bodyParser.json());
 // =============================================================
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-var routes = require("./models/burger.js");
+//var routes = require("./models/burger.js");
+var routes = require("./controllers/burgerController.js");
 app.use(routes);
 // Starts the server to begin listening
 // =============================================================
