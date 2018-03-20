@@ -5,7 +5,7 @@
 <div id="burgerContainer">
   <div id="unEaten">
     <ul>
-      {{#each burgers}}
+      {{#each unless devoured == true burgers}}
       	<li>
       	   <p>{{this.name}}</p>
       	</li>
@@ -14,7 +14,7 @@
   </div>
   <div id="eaten">
     <ul>
-      {{#each burgers}}
+      {{#each if devoured == true show this}}
       	<li>
       	   <p>{{this.name}}</p>
       	</li>
