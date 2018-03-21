@@ -5,19 +5,23 @@
 <div id="burgerContainer">
   <div id="unEaten">
     <ul>
-      {{#each unless devoured == true burgers}}
-      	<li>
-      	   <p>{{this.name}}</p>
-      	</li>
+      {{#each burgers}}
+        {{#unless devoured}}
+        	<li>
+        	   <p>{{this.name}}</p>
+        	</li>
+        {{/unless}}
       {{/each}}
     </ul>
   </div>
   <div id="eaten">
     <ul>
-      {{#each if devoured == true show this}}
-      	<li>
-      	   <p>{{this.name}}</p>
-      	</li>
+      {{#each burgers}}
+        {{#if devoured}}
+        	<li>
+        	   <p>{{this.name}}</p>
+        	</li>
+        {{/if}}
       {{/each}}
     </ul>
   </div>
