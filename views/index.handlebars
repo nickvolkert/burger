@@ -4,23 +4,21 @@
 
 <div id="burgerContainer">
   <div id="unEaten">
+    <h2>Burgers to Devour! NOM NOM</h2>
     <ul>
-      {{#each burgers}}
+      {{#each burger}}
         {{#unless devoured}}
-        	<li>
-        	   <p>{{this.name}}</p>
-        	</li>
+        	 {{> burgers/burgers devoured=false}}
         {{/unless}}
       {{/each}}
     </ul>
   </div>
   <div id="eaten">
+    <h2>Devoured Burgers! TASTY</h2>
     <ul>
-      {{#each burgers}}
+      {{#each burger}}
         {{#if devoured}}
-        	<li>
-        	   <p>{{this.name}}</p>
-        	</li>
+        	{{> burgers/burgers devoured=true}}
         {{/if}}
       {{/each}}
     </ul>
@@ -28,7 +26,7 @@
 </div>
 <div>
   <form action="/" method="POST">
-  	<textarea type="text" name="burgerForm"></textarea>
+  	<textarea type="text" name="burgerForm" id="burgerForm"></textarea>
     <button type="submit" id="burgerBTN">Add a Burger</button>
   </form>
 </div>
