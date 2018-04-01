@@ -22,28 +22,8 @@ $(function() {
     );
   });
 
-  // function postDaBurger(e){
-  //   e.preventDefault();
-  //
-  //   var newBurger = {
-  //     name: $("#burgerForm").val().trim()
-  //   };
-  //
-  //   // Send the POST request.
-  //   $.ajax("/api/burgers/", {
-  //     type: "POST",
-  //     data: newBurger
-  //   }).then(
-  //     function() {
-  //       console.log("A new tasty burger to DEVOUR");
-  //       // Reload the page to get the updated list
-  //       location.reload();
-  //     }
-  //   );
-  // }
-  $("#burgerBTN").on("click", function(e) {
-    e.preventDefault();
-
+  // post dat burger!
+  function postDaBurger(){
     var newBurger = {
       name: $("#burgerForm").val().trim()
     };
@@ -59,27 +39,18 @@ $(function() {
         location.reload();
       }
     );
+    $("#burgerForm").val("");
+  }
+
+  $("#burgerBTN").on("click", function(e) {
+    e.preventDefault();
+    postDaBurger();
   });
 
   $("input#burgerForm").keypress(function(e) {
-    if (event.which == 13) {
+    if (e.which == 13) {
       e.preventDefault();
-
-      var newBurger = {
-        name: $("#burgerForm").val().trim()
-      };
-
-      // Send the POST request.
-      $.ajax("/api/burgers/", {
-        type: "POST",
-        data: newBurger
-      }).then(
-        function() {
-          console.log("A new tasty burger to DEVOUR");
-          // Reload the page to get the updated list
-          location.reload();
-        }
-      );
+      postDaBurger();
     }
   });
   // $(".delete-cat").on("click", function(event) {
