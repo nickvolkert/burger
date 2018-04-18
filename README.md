@@ -1,4 +1,4 @@
-# Not all that is glitters is gold
+# Track your burgers NOM NOM NOM
 
 ### Overview
 
